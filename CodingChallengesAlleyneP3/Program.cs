@@ -3,9 +3,12 @@ using System.ComponentModel;
 
 class Challenges
 {
+    let functionArray = [Sum, Convert, PlusOne, CircuitPower, CalcAge, triArea, lessThanOrEqualToZero];
+   
     public static void Main(string[] args)
     {
         Console.WriteLine("Welcome to my coding challenge program! There will be a variety of different funtion programs to choose from. Please pick one");
+        let fun = functionArray[2]();
 
         Console.WriteLine("Today we are going to use the number adder function called SUM. Please input two numbers for us to add. \n");
 
@@ -67,9 +70,10 @@ class Challenges
         Console.WriteLine("Let's see if a number is less than or equal to 0. \nPlease enter a number");
 
         var number10 = Console.ReadLine();
-        float num10float = float.Parse(number10);
+        int number10int = int.Parse(number10);
 
-       
+        Console.WriteLine("Your number is " + lessThanOrEqualToZero(number10int));
+
         
     }
     
@@ -104,18 +108,9 @@ class Challenges
         return (number8 * number9) / 2;
     }
 
-    public bool lessThanOrEqualToZero(float number10)
+    public static bool lessThanOrEqualToZero(int number10)
     {
-       if (number10 <= 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-        
+        return number10 <= 0;
     }
         
 }

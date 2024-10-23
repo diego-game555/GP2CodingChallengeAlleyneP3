@@ -3,12 +3,13 @@ using System.ComponentModel;
 
 class Challenges
 {
-    let functionArray = [Sum, Convert, PlusOne, CircuitPower, CalcAge, triArea, lessThanOrEqualToZero];
+   
    
     public static void Main(string[] args)
     {
+        let functionArray = [Sum, Convert, PlusOne, CircuitPower, CalcAge, triArea, lessThanOrEqualToZero];
         Console.WriteLine("Welcome to my coding challenge program! There will be a variety of different funtion programs to choose from. Please pick one");
-        let fun = functionArray[2]();
+        let functionArray[1]();
 
         Console.WriteLine("Today we are going to use the number adder function called SUM. Please input two numbers for us to add. \n");
 

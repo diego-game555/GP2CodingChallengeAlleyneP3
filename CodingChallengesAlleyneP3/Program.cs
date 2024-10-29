@@ -3,13 +3,11 @@ using System.ComponentModel;
 
 class Challenges
 {
-   
-   
+
+
     public static void Main(string[] args)
     {
-        let functionArray = [Sum, Convert, PlusOne, CircuitPower, CalcAge, triArea, lessThanOrEqualToZero];
         Console.WriteLine("Welcome to my coding challenge program! There will be a variety of different funtion programs to choose from. Please pick one");
-        let functionArray[1]();
 
         Console.WriteLine("Today we are going to use the number adder function called SUM. Please input two numbers for us to add. \n");
 
@@ -53,7 +51,7 @@ class Challenges
 
         var number7 = Console.ReadLine();
         int number7int = int.Parse(number7);
-        
+
         Console.WriteLine("You are " + CalcAge(number7int) + " days old");
 
         Console.WriteLine("Let's calculate the area of a triangle by taking the base and the height. \nWhat is the height of the triangle?");
@@ -75,9 +73,33 @@ class Challenges
 
         Console.WriteLine("Your number is " + lessThanOrEqualToZero(number10int));
 
-        
+        Console.WriteLine("Let's see if the sum of two numbers is less than 100. \nPlease enter a number");
+
+        var number11 = Console.ReadLine();
+        int number11int = int.Parse(number11);
+
+        Console.WriteLine("Great, now enter a second number");
+
+        var number12 = Console.ReadLine();
+        int number12int = int.Parse(number12);
+
+        Console.WriteLine("Your numbers are " + lessThan100(number11int, number12int));
+
+        Console.WriteLine("Let's see if two numbers are equal to each other. \nPlease enter a number");
+
+        var number13 = Console.ReadLine();
+        int number13int = int.Parse(number13);
+
+        Console.WriteLine("Cool, now enter a second number");
+
+        var number14 = Console.ReadLine();
+        int number14int = int.Parse(number14);
+
+        Console.WriteLine("These numbers are " + IsEqual(number13int, number14int));
+
+
     }
-    
+
     public static int Sum(int number1, int number2)
     {
         return number1 + number2;
@@ -112,6 +134,16 @@ class Challenges
     public static bool lessThanOrEqualToZero(int number10)
     {
         return number10 <= 0;
+    }
+
+    public static bool lessThan100(int number11, int number12)
+    {
+        return (number11 + number12) < 100;
+    }
+
+    public static bool IsEqual(int number13, int number14)
+    {
+        return number13 == number14;
     }
         
 }

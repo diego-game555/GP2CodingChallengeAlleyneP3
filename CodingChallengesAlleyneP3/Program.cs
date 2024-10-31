@@ -97,6 +97,17 @@ class Challenges
 
         Console.WriteLine("These numbers are " + IsEqual(number13int, number14int));
 
+        Console.WriteLine("Enter something: ");
+        string userInput = Console.ReadLine();
+
+        Console.WriteLine(GiveMeSomething(userInput));
+
+        Console.WriteLine("\n");
+
+        var number0 = Console.ReadLine();
+        int number0int = int.Parse(number0);
+
+        Console.WriteLine("wetew" + Add(number0int));
 
     }
 
@@ -145,6 +156,15 @@ class Challenges
     {
         return number13 == number14;
     }
-        
+   
+    public static string GiveMeSomething(string input)
+    {
+        return "something " + input;
+    }
+
+    public static int Add(int number0)
+    {
+        return number0 + 1;
+    }
 }
 

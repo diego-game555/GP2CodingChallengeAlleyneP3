@@ -9,6 +9,70 @@ class Challenges
     {
         Console.WriteLine("Welcome to my coding challenge program! There will be a variety of different funtion programs to choose from. Please pick one");
 
+        string[] functions =
+        {
+            "1. Sum()",
+            "2. Convert()",
+            "3. PlusOne()",
+            "4. CircuitPower()",
+            "5. CalcAge()",
+            "6. triArea()",
+            "7. lessThanOrEqualToZero()",
+            "8. lessThan100()",
+            "9. isEqual()",
+            "10. GiveMeSomething()",
+        };
+
+        foreach (string function in functions)
+        {
+            Console.WriteLine(function);
+        }
+
+        Console.Write("\nEnter the number of the function you want to run: "):
+        string userInput = Console.ReadLine();
+        int choice;
+
+        if (int.TryParse(userInput, out choice) && choice >= 1 && choice <= 10)
+        {
+            switch (choice)
+            {
+                case 1:
+                    Sum();
+                    break;
+                case 2:
+                    Convert()
+                    break;
+                case 3:
+                    PlusOne();
+                    break;
+                case 4:
+                    CircuitPower();
+                    break;
+                case 5:
+                    CalcAge();
+                    break;
+                case 6:
+                    triArea();
+                    break;
+                case 7:
+                    lessThanOrEqualToZero();
+                    break;
+                case 8:
+                    lessThan100();
+                    break;
+                case 9:
+                    IsEqual();
+                    break;
+                case 10:
+                    GiveMeSomething();
+                    break;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please run the program again and choose a valid number.");
+        }
+
         Console.WriteLine("Today we are going to use the number adder function called SUM. Please input two numbers for us to add. \n");
 
         var number1 = Console.ReadLine();

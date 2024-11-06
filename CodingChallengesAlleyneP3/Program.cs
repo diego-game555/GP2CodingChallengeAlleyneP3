@@ -9,68 +9,61 @@ class Challenges
     {
         Console.WriteLine("Welcome to my coding challenge program! There will be a variety of different funtion programs to choose from. Please pick one");
 
-        string[] functions =
-        {
-            "1. Sum()",
-            "2. Convert()",
-            "3. PlusOne()",
-            "4. CircuitPower()",
-            "5. CalcAge()",
-            "6. triArea()",
-            "7. lessThanOrEqualToZero()",
-            "8. lessThan100()",
-            "9. isEqual()",
-            "10. GiveMeSomething()",
-        };
+        Console.WriteLine("1. Sum");
+        Console.WriteLine("2. Convert");
+        Console.WriteLine("3. PlusOne");
+        Console.WriteLine("4. CircuitPower");
+        Console.WriteLine("5. CalcAge");
+        Console.WriteLine("6. triArea");
+        Console.WriteLine("7. lessThanOrEqualToZero");
+        Console.WriteLine("8. lessThan100");
+        Console.WriteLine("9. IsEqual");
+        Console.WriteLine("10. GiveMeSomething");
 
-        foreach (string function in functions)
+        
+        while (true)
         {
-            Console.WriteLine(function);
-        }
+            Console.Write("\nEnter the number of the function you want to run: ");
+            var choice = Console.ReadLine();
 
-        Console.Write("\nEnter the number of the function you want to run: "):
-        string userInput = Console.ReadLine();
-        int choice;
+            if (choice == "0")
+            {
+                break;
+            }
 
-        if (int.TryParse(userInput, out choice) && choice >= 1 && choice <= 10)
-        {
             switch (choice)
             {
-                case 1:
+                case "1":
                     Sum();
                     break;
-                case 2:
-                    Convert()
+                case "2":
+                    Convert();
                     break;
-                case 3:
+                case "3":
                     PlusOne();
                     break;
-                case 4:
+                case "4":
                     CircuitPower();
                     break;
-                case 5:
+                case "5":
                     CalcAge();
                     break;
-                case 6:
+                case "6":
                     triArea();
                     break;
-                case 7:
+                case "7":
                     lessThanOrEqualToZero();
                     break;
-                case 8:
+                case "8":
                     lessThan100();
                     break;
-                case 9:
+                case "9":
                     IsEqual();
                     break;
-                case 10:
+                case "10":
                     GiveMeSomething();
                     break;
             }
-        }
-        else
-        {
-            Console.WriteLine("Invalid input. Please run the program again and choose a valid number.");
         }
 
         Console.WriteLine("Today we are going to use the number adder function called SUM. Please input two numbers for us to add. \n");

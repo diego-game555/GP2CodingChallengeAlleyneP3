@@ -9,63 +9,6 @@ class Challenges
     {
         Console.WriteLine("Welcome to my coding challenge program! There will be a variety of different funtion programs to choose from. Please pick one");
 
-        Console.WriteLine("1. Sum");
-        Console.WriteLine("2. Convert");
-        Console.WriteLine("3. PlusOne");
-        Console.WriteLine("4. CircuitPower");
-        Console.WriteLine("5. CalcAge");
-        Console.WriteLine("6. triArea");
-        Console.WriteLine("7. lessThanOrEqualToZero");
-        Console.WriteLine("8. lessThan100");
-        Console.WriteLine("9. IsEqual");
-        Console.WriteLine("10. GiveMeSomething");
-
-        
-        while (true)
-        {
-            Console.Write("\nEnter the number of the function you want to run: ");
-            var choice = Console.ReadLine();
-
-            if (choice == "0")
-            {
-                break;
-            }
-
-            switch (choice)
-            {
-                case "1":
-                    Sum();
-                    break;
-                case "2":
-                    Convert();
-                    break;
-                case "3":
-                    PlusOne();
-                    break;
-                case "4":
-                    CircuitPower();
-                    break;
-                case "5":
-                    CalcAge();
-                    break;
-                case "6":
-                    triArea();
-                    break;
-                case "7":
-                    lessThanOrEqualToZero();
-                    break;
-                case "8":
-                    lessThan100();
-                    break;
-                case "9":
-                    IsEqual();
-                    break;
-                case "10":
-                    GiveMeSomething();
-                    break;
-            }
-        }
-
         Console.WriteLine("Today we are going to use the number adder function called SUM. Please input two numbers for us to add. \n");
 
         var number1 = Console.ReadLine();
@@ -159,6 +102,13 @@ class Challenges
 
         Console.WriteLine(GiveMeSomething(userInput));
 
+        Console.WriteLine("Let's convert hours into seconds. \nPlease enter a number for hours");
+
+        var number15 = Console.ReadLine();
+        int number15int = int.Parse(number15);
+
+        Console.WriteLine("There are " + howManySeconds(number15int) + " seconds");
+
         Console.WriteLine("\n");
 
         var number0 = Console.ReadLine();
@@ -222,6 +172,11 @@ class Challenges
     public static int Add(int number0)
     {
         return number0 + 1;
+    }
+
+    public static int howManySeconds(int number15)
+    {
+        return number15 * 3600;
     }
 }
 

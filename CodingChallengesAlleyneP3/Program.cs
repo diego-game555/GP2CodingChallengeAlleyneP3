@@ -109,6 +109,18 @@ class Challenges
 
         Console.WriteLine("There are " + howManySeconds(number15int) + " seconds");
 
+        Console.WriteLine("Let's calculate the sum of all angles in a polygon.\nEnter a number");
+
+        var number16 = Console.ReadLine();
+        int number16int = int.Parse(number16);
+
+        Console.WriteLine("This polygon's angles has " + SumPolygon(number16int) + " degrees");
+
+        Console.WriteLine("Enter something: ");
+        string userInput1 = Console.ReadLine();
+
+        Console.WriteLine(nameString(userInput1));
+
         Console.WriteLine("\n");
 
         var number0 = Console.ReadLine();
@@ -177,6 +189,16 @@ class Challenges
     public static int howManySeconds(int number15)
     {
         return number15 * 3600;
+    }
+
+    public static string nameString(string input1)
+    {
+        return input1 + "Edabit";
+    }
+
+    public static int SumPolygon(int number16)
+    {
+        return (number16 - 2) * 180;
     }
 }
 

@@ -121,6 +121,15 @@ class Challenges
 
         Console.WriteLine(nameString(userInput1));
 
+        Console.WriteLine("Enter true or false for 'a':");
+        bool a = And();
+
+        Console.WriteLine("Neter true or false for 'b':");
+        bool b = And();
+
+        bool result = And(a, b);
+        Console.WriteLine($"Result of a && b is: {result}");
+
         Console.WriteLine("\n");
 
         var number0 = Console.ReadLine();
@@ -199,6 +208,27 @@ class Challenges
     public static int SumPolygon(int number16)
     {
         return (number16 - 2) * 180;
+    }
+
+    public static bool And(bool a, bool b)
+    {
+        return a && b;
+    }
+
+    public static bool GetAndInput()
+    {
+        while (true)
+        {
+            string input = Console.ReadLine();
+            if (bool.TryeParse(input, out bool value))
+            {
+                return value;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter 'true' or 'false':");
+            }
+        }
     }
 }
 

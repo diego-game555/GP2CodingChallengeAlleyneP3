@@ -26,6 +26,7 @@ class Challenges
             Console.WriteLine("13. nameString");
             Console.WriteLine("14. SumPolygon");
             Console.WriteLine("16. points");
+            Console.WriteLine("17. FindPerimeter");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -135,6 +136,15 @@ class Challenges
                     int number18int = int.Parse(number18);
                     Console.WriteLine("The total number of points scored is " + points(number17int, number18int));
                     break;
+                case "17":
+                    Console.WriteLine("Let's calculate the perimeter of a rectangle. \nEnter the legnth");
+                    var number19 = Console.ReadLine();
+                    int number19int = int.Parse(number19);
+                    Console.WriteLine("Great, now enter the width");
+                    var number20 = Console.ReadLine();
+                    int number20int = int.Parse(number20);
+                    Console.WriteLine("The perimeter of the rectangle is " + FindPerimeter(number19int, number20int));
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -219,6 +229,11 @@ class Challenges
     public static int points(int number17, int number18)
     {
         return (number17 * 2) + (number18 * 3);
+    }
+
+    public static int FindPerimeter(int number19, int number20)
+    {
+        return (number19 * 2) + (number20 * 2);
     }
 }
 

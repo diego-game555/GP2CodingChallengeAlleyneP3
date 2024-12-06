@@ -27,6 +27,7 @@ class Challenges
             Console.WriteLine("14. SumPolygon");
             Console.WriteLine("16. points");
             Console.WriteLine("17. FindPerimeter");
+            Console.WriteLine("18. HelloName");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -145,6 +146,11 @@ class Challenges
                     int number20int = int.Parse(number20);
                     Console.WriteLine("The perimeter of the rectangle is " + FindPerimeter(number19int, number20int));
                     break;
+                case "18":
+                    Console.WriteLine("\nPlease enter your name");
+                    string userInput2 = Console.ReadLine();
+                    Console.WriteLine(HelloName(userInput2));
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -234,6 +240,11 @@ class Challenges
     public static int FindPerimeter(int number19, int number20)
     {
         return (number19 * 2) + (number20 * 2);
+    }
+
+    public static string HelloName(string input2)
+    {
+        return "Hello " + input2;
     }
 }
 

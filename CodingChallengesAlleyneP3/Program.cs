@@ -28,6 +28,7 @@ class Challenges
             Console.WriteLine("16. points");
             Console.WriteLine("17. FindPerimeter");
             Console.WriteLine("18. HelloName");
+            Console.WriteLine("19. animals");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -151,6 +152,18 @@ class Challenges
                     string userInput2 = Console.ReadLine();
                     Console.WriteLine(HelloName(userInput2));
                     break;
+                case "19":
+                    Console.WriteLine("Let's count the total number of legs on animals. \nEnter the number of chickens");
+                    var number21 = Console.ReadLine();
+                    int number21int = int.Parse(number21);
+                    Console.WriteLine("Cool, now enter the number of cows");
+                    var number22 = Console.ReadLine();
+                    int number22int = int.Parse(number22);
+                    Console.WriteLine("Cool, now enter the number of cows");
+                    var number23 = Console.ReadLine();
+                    int number23int = int.Parse(number23);
+                    Console.WriteLine("The total number of legs on the animals are " + animals(number21int, number22int, number23int));
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -245,6 +258,11 @@ class Challenges
     public static string HelloName(string input2)
     {
         return "Hello " + input2;
+    }
+
+    public static int animals(int number21, int number22, int number23)
+    {
+        return (number21 * 2) + (number22 * 4) + (number23 * 4);
     }
 }
 

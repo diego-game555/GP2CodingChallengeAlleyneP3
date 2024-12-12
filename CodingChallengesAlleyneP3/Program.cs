@@ -29,6 +29,7 @@ class Challenges
             Console.WriteLine("17. FindPerimeter");
             Console.WriteLine("18. HelloName");
             Console.WriteLine("19. animals");
+            Console.WriteLine("20. FootballPoints");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -159,10 +160,22 @@ class Challenges
                     Console.WriteLine("Cool, now enter the number of cows");
                     var number22 = Console.ReadLine();
                     int number22int = int.Parse(number22);
-                    Console.WriteLine("Cool, now enter the number of cows");
+                    Console.WriteLine("Cool, now enter the number of pigs");
                     var number23 = Console.ReadLine();
                     int number23int = int.Parse(number23);
                     Console.WriteLine("The total number of legs on the animals are " + animals(number21int, number22int, number23int));
+                    break;
+                case "20":
+                    Console.WriteLine("Let's calculate the number of football points a team has obtained so far. \nEnter the number of wins");
+                    var number24 = Console.ReadLine();
+                    int number24int = int.Parse(number24);
+                    Console.WriteLine("Great now enter the number of draws");
+                    var number25 = Console.ReadLine();
+                    int number25int = int.Parse(number25);
+                    Console.WriteLine("Cool now enter the number of losses");
+                    var number26 = Console.ReadLine();
+                    int number26int = int.Parse(number26);
+                    Console.WriteLine("The total number of points is " + FootballPoints(number24int, number25int, number26int));
                     break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
@@ -263,6 +276,11 @@ class Challenges
     public static int animals(int number21, int number22, int number23)
     {
         return (number21 * 2) + (number22 * 4) + (number23 * 4);
+    }
+
+    public static int FootballPoints(int number24, int number25, int number26)
+    {
+        return (number24 * 3) + (number25) + (number26 * 0);
     }
 }
 

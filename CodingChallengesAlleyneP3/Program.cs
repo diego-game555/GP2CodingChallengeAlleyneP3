@@ -30,6 +30,7 @@ class Challenges
             Console.WriteLine("18. HelloName");
             Console.WriteLine("19. animals");
             Console.WriteLine("20. FootballPoints");
+            Console.WriteLine("21. MonthName");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -177,6 +178,18 @@ class Challenges
                     int number26int = int.Parse(number26);
                     Console.WriteLine("The total number of points is " + FootballPoints(number24int, number25int, number26int));
                     break;
+                case "21":
+                    Console.WriteLine("Let's choose a month, enter a number between 1 and 12:");
+                    if (int.TryParse(Console.ReadLine(), out int monthNumber))
+                    {
+                        string result = GetMonthName(monthNumber);
+                        Console.WriteLine(result);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input.");
+                    }
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -281,6 +294,20 @@ class Challenges
     public static int FootballPoints(int number24, int number25, int number26)
     {
         return (number24 * 3) + (number25) + (number26 * 0);
+    }
+
+    public static string GetMonthName(int number27)
+    {
+        string[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+
+        if (number27 >= 1 && number27 <= 12)
+        {
+            return months[number27 - 1];
+        }
+        else
+        {
+            return "Invalid number. Please choose a number between 1 and 12.";
+        }
     }
 }
 

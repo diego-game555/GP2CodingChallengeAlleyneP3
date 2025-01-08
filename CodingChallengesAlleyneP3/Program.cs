@@ -31,6 +31,7 @@ class Challenges
             Console.WriteLine("19. animals");
             Console.WriteLine("20. FootballPoints");
             Console.WriteLine("21. MonthName");
+            Console.WriteLine("22. FindMinMax");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -190,6 +191,22 @@ class Challenges
                         Console.WriteLine("Invalid input.");
                     }
                     break;
+                case "22":
+                    Console.WriteLine("Enter numbers separated by spaces:");
+                    string input = Console.ReadLine();
+
+                    int[] numbers = Array.ConvertAll(input.Split(' '), int.Parse);
+                    int[] result = FindMinMax(numbers);
+
+                    if (result != null)
+                    {
+                        Console.WriteLine($"Min: {result[0]}, Max: {result[1]}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Array is empty or null");
+                    }
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -308,6 +325,25 @@ class Challenges
         {
             return "Invalid number. Please choose a number between 1 and 12.";
         }
+    }
+
+    public static int[] FinMinMax(int[] numbers)
+    {
+        if (numbers == null || numbers.Length == 0)
+        {
+            return null;
+        }
+
+        int min = int.MaxValue;
+        int max = int.MinValue;
+
+        foreach (int number in numbers)
+        {
+            if (number < min) min = number;
+            if (number > max) max = number;
+        }
+
+        return new int[] { min, max };
     }
 }
 

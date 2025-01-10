@@ -196,16 +196,9 @@ class Challenges
                     string input = Console.ReadLine();
 
                     int[] numbers = Array.ConvertAll(input.Split(' '), int.Parse);
-                    int[] result = FindMinMax(numbers);
+                    int[] result1 = FindMinMax(numbers);
 
-                    if (result != null)
-                    {
-                        Console.WriteLine($"Min: {result[0]}, Max: {result[1]}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Array is empty or null");
-                    }
+                    Console.WriteLine("(" + result1[0] + ", " + result1[1] + ")");
                     break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
@@ -327,23 +320,37 @@ class Challenges
         }
     }
 
-    public static int[] FinMinMax(int[] numbers)
+    public static int[] FindMinMax(int[] numbers)
     {
-        if (numbers == null || numbers.Length == 0)
+       if (numbers.Length == 0)
         {
-            return null;
+            return new int[] { 0, 0 };
         }
 
-        int min = int.MaxValue;
-        int max = int.MinValue;
-
-        foreach (int number in numbers)
+        int min = numbers[0];
+        int max = numbers[0];
+        for (int i = 1; i < numbers.Length; i++)
         {
-            if (number < min) min = number;
-            if (number > max) max = number;
+            if (numbers[i] < min)
+            {
+                min = numbers[i];
+            }
+            if (numbers[i] > max)
+            {
+                max = numbers[i];
+            }
         }
-
         return new int[] { min, max };
+    }
+
+    public static int[] getAbsSum(int[] arr)
+    {
+        int sum = 0; ;
+        foreach (int num in arr)
+        {
+            sum += Math.Abs(num);
+        }
+        return sum;
     }
 }
 

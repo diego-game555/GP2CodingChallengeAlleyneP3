@@ -32,6 +32,7 @@ class Challenges
             Console.WriteLine("20. FootballPoints");
             Console.WriteLine("21. MonthName");
             Console.WriteLine("22. FindMinMax");
+            Console.WriteLine("23. getAbsSum");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -200,6 +201,15 @@ class Challenges
 
                     Console.WriteLine("(" + result1[0] + ", " + result1[1] + ")");
                     break;
+                case "23":
+                    Console.WriteLine("Please input the numbers for the array, separated by spaces: ");
+                    string input2 = Console.ReadLine();
+                    int[] numbers2 = Array.ConvertAll(input2.Split(' '), int.Parse);
+                    // Call the SumAbsoluteValues function
+                    int sum = SumAbsoluteValues(numbers2);
+                    // Display the result
+                    Console.WriteLine("The sum of the absolute values is: " + sum);
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -349,6 +359,16 @@ class Challenges
         foreach (int num in arr)
         {
             sum += Math.Abs(num);
+        }
+        return sum;
+    }
+
+    public static int SumAbsoluteValues(int[] numbers)
+    {
+        int sum = 0;
+        foreach (int number in numbers)
+        {
+            sum += Math.Abs(number);
         }
         return sum;
     }

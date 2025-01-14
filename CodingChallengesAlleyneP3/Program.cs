@@ -33,6 +33,7 @@ class Challenges
             Console.WriteLine("21. MonthName");
             Console.WriteLine("22. FindMinMax");
             Console.WriteLine("23. getAbsSum");
+            Console.WriteLine("24. CalculateExponent");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -210,6 +211,15 @@ class Challenges
                     // Display the result
                     Console.WriteLine("The sum of the absolute values is: " + sum);
                     break;
+                case "24":
+                    Console.WriteLine("Enter the base number: ");
+                    var baseNumber = Console.ReadLine();
+                    int baseNumberInt = int.Parse(baseNumber);
+                    Console.WriteLine("Enter the exponent number: ");
+                    var exponentNumber = Console.ReadLine();
+                    int exponentNumberInt = int.Parse(exponentNumber);
+                    Console.WriteLine("The result is: " + Power(baseNumberInt, exponentNumberInt));
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -353,16 +363,6 @@ class Challenges
         return new int[] { min, max };
     }
 
-    public static int[] getAbsSum(int[] arr)
-    {
-        int sum = 0; ;
-        foreach (int num in arr)
-        {
-            sum += Math.Abs(num);
-        }
-        return sum;
-    }
-
     public static int SumAbsoluteValues(int[] numbers)
     {
         int sum = 0;
@@ -371,6 +371,16 @@ class Challenges
             sum += Math.Abs(number);
         }
         return sum;
+    }
+    
+    public static int Power(int baseNumber, int exponentNumber)
+    {
+        int result = 1;
+        for (int i = 0; i < exponentNumber; i++)
+        {
+            result *= baseNumber;
+        }
+        return result;
     }
 }
 

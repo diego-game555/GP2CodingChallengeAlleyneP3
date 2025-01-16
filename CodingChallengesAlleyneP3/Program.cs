@@ -34,6 +34,7 @@ class Challenges
             Console.WriteLine("22. FindMinMax");
             Console.WriteLine("23. getAbsSum");
             Console.WriteLine("24. CalculateExponent");
+            Console.WriteLine("25. MultiplyByLength");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -220,6 +221,15 @@ class Challenges
                     int exponentNumberInt = int.Parse(exponentNumber);
                     Console.WriteLine("The result is: " + Power(baseNumberInt, exponentNumberInt));
                     break;
+                case "25":
+                    Console.WriteLine("Please input the numbers for the array, separated by spaces: ");
+                    string input3 = Console.ReadLine();
+                    int[] numbers3 = Array.ConvertAll(input3.Split(' '), int.Parse);
+                    // Call the MultiplyByArrayLength function
+                    int[] multipliedArray = MultiplyByArrayLength(numbers3);
+                    // Display the result
+                    Console.WriteLine("The multiplied array is: " + string.Join(", ", multipliedArray));
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -379,6 +389,16 @@ class Challenges
         for (int i = 0; i < exponentNumber; i++)
         {
             result *= baseNumber;
+        }
+        return result;
+    }
+
+    public static int[] MultiplyByArrayLength(int[] numbers)
+    {
+        int[] result = new int[numbers.Length];
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            result[i] = numbers[i] * numbers.Length;
         }
         return result;
     }

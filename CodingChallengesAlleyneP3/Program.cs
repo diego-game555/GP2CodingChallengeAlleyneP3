@@ -35,6 +35,7 @@ class Challenges
             Console.WriteLine("23. getAbsSum");
             Console.WriteLine("24. CalculateExponent");
             Console.WriteLine("25. MultiplyByLength");
+            Console.WriteLine("26. HammingDistance");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -230,6 +231,14 @@ class Challenges
                     // Display the result
                     Console.WriteLine("The multiplied array is: " + string.Join(", ", multipliedArray));
                     break;
+                case "26":
+                    Console.WriteLine("Please enter the first string: ");
+                    string str1 = Console.ReadLine();
+                    Console.WriteLine("Please enter the second string: ");
+                    string str2 = Console.ReadLine();
+                    int distance = HammingDistance(str1, str2);
+                    Console.WriteLine("The Hamming distance between the two strings is: " + distance);
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -267,7 +276,7 @@ class Challenges
 
     public static float triArea(float number8, float number9)
     {
-        
+
         return (number8 * number9) / 2;
     }
 
@@ -285,7 +294,7 @@ class Challenges
     {
         return number13 == number14;
     }
-   
+
     public static string GiveMeSomething(string input)
     {
         return "something " + input;
@@ -352,7 +361,7 @@ class Challenges
 
     public static int[] FindMinMax(int[] numbers)
     {
-       if (numbers.Length == 0)
+        if (numbers.Length == 0)
         {
             return new int[] { 0, 0 };
         }
@@ -382,7 +391,7 @@ class Challenges
         }
         return sum;
     }
-    
+
     public static int Power(int baseNumber, int exponentNumber)
     {
         int result = 1;
@@ -401,6 +410,23 @@ class Challenges
             result[i] = numbers[i] * numbers.Length;
         }
         return result;
+    }
+
+    public static int HammingDistance(string str1, string str2)
+    {
+        if (str1.Length != str2.Length)
+        {
+            throw new ArgumentException("Strings must be of equal length.");
+        }
+        int distance = 0;
+        for (int i = 0; i < str1.Length; i++)
+        {
+            if (str1[i] != str2[i])
+            {
+                distance++;
+            }
+        }
+        return distance;
     }
 }
 

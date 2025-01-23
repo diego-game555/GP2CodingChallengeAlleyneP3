@@ -36,6 +36,7 @@ class Challenges
             Console.WriteLine("24. CalculateExponent");
             Console.WriteLine("25. MultiplyByLength");
             Console.WriteLine("26. HammingDistance");
+            Console.WriteLine("27. NameShuffle");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -239,6 +240,12 @@ class Challenges
                     int distance = HammingDistance(str1, str2);
                     Console.WriteLine("The Hamming distance between the two strings is: " + distance);
                     break;
+                case "27":
+                    Console.WriteLine("Enter a full name (first last): ");
+                    string fullName = Console.ReadLine();
+                    string swappedName = SwapNames(fullName);
+                    Console.WriteLine("Swapped name: " + swappedName);
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -427,6 +434,16 @@ class Challenges
             }
         }
         return distance;
+    }
+
+    public static string SwapNames(string name)
+    {
+        string[] names = name.Split(' ');
+        if (names.Length != 2)
+        {
+            throw new ArgumentException("Invalid name format. Please provide a first and last name.");
+        }
+        return names[1] + " " + names[0];
     }
 }
 

@@ -37,6 +37,7 @@ class Challenges
             Console.WriteLine("25. MultiplyByLength");
             Console.WriteLine("26. HammingDistance");
             Console.WriteLine("27. NameShuffle");
+            Console.WriteLine("28. SmallerNumber");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -246,6 +247,20 @@ class Challenges
                     string swappedName = SwapNames(fullName);
                     Console.WriteLine("Swapped name: " + swappedName);
                     break;
+                case "28":
+                    Console.WriteLine("Enter two numbers separated by a comma");
+                    string input4 = Console.ReadLine();
+
+                    try
+                    {
+                        int result = SmallerNumber(input4);
+                        Console.WriteLine("Smaller number: " + result);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Invalid input"); 
+                    }
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -444,6 +459,16 @@ class Challenges
             throw new ArgumentException("Invalid name format. Please provide a first and last name.");
         }
         return names[1] + " " + names[0];
+    }
+
+    public static int SmallerNumber(string input4)
+    {
+        string[] numbers3 = input4.Split(',');
+
+        int num1a = int.Parse(numbers3[0].Trim());
+        int num2a = int.Parse(numbers3[1].Trim());
+
+        return Math.Min(num1a, num2a);
     }
 }
 

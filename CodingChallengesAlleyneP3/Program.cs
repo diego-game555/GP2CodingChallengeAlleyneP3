@@ -38,6 +38,7 @@ class Challenges
             Console.WriteLine("26. HammingDistance");
             Console.WriteLine("27. NameShuffle");
             Console.WriteLine("28. SmallerNumber");
+            Console.WriteLine("29. Factorial");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -261,6 +262,13 @@ class Challenges
                         Console.WriteLine("Invalid input"); 
                     }
                     break;
+                case "29":
+                    Console.WriteLine("Enter an integer: ");
+                    string input5 = Console.ReadLine();
+                    int number28 = int.Parse(input5);
+                    int factorial = Factorial(number28);
+                    Console.WriteLine("The factorial of " + number28 + " is: " + factorial);
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -469,6 +477,27 @@ class Challenges
         int num2a = int.Parse(numbers3[1].Trim());
 
         return Math.Min(num1a, num2a);
+    }
+
+    public static int Factorial(int number28)
+    {
+        if (number28 < 0)
+        {
+            throw new ArgumentException("Factorial is not defined for negative numbers.");
+        }
+        else if (number28 == 0)
+        {
+            return 1;
+        }
+        else
+        {
+            int factorial = 1;
+            for (int i = 1; i <= number28; i++)
+            {
+                factorial *= i;
+            }
+            return factorial;
+        }
     }
 }
 

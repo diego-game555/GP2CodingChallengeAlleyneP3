@@ -39,6 +39,7 @@ class Challenges
             Console.WriteLine("27. NameShuffle");
             Console.WriteLine("28. SmallerNumber");
             Console.WriteLine("29. Factorial");
+            Console.WriteLine("30. VowelCount");
             Console.WriteLine("\nPlease enter the corresponding number of your choice");
             string choice = Console.ReadLine();
 
@@ -269,6 +270,14 @@ class Challenges
                     int factorial = Factorial(number28);
                     Console.WriteLine("The factorial of " + number28 + " is: " + factorial);
                     break;
+                case "30":
+                    Console.WriteLine("Enter a word: ");
+                    string input6 = Console.ReadLine();
+
+                    int vowelCount = CountVowel(input6);
+
+                    Console.WriteLine($"Number of vowels: {vowelCount}");
+                    break;
                 default:
                     Console.WriteLine("Invalid choice, please pick a valid number");
                     break;
@@ -498,6 +507,22 @@ class Challenges
             }
             return factorial;
         }
+    }
+
+    public static int CountVowel(string str5)
+    {
+        int count = 0;
+        string vowels = "aeiouAEIOU";
+
+        foreach (char c in str5)
+        {
+            if (vowels.Contains(c))
+            {
+                count++;
+            }
+        }
+
+        return count;
     }
 }
 
